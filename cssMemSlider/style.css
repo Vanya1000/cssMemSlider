@@ -1,7 +1,7 @@
 * {
 	padding: 0;
 	margin: 0;
-	border: 0px;
+	border: 0rem;
 }
 *,
 *:before,
@@ -42,7 +42,7 @@ button::-moz-focus-inner {
 }
 a,
 a:visited {
-	color: #ffffff;
+	color: #fff;
 	text-decoration: none;
 }
 a:hover {
@@ -64,7 +64,7 @@ h6 {
 }
 
 html {
-	background: #2b2b2b;
+	background: #25282a;
 	font-family: "Helvetica", "Arial", sans-serif;
 	font-size: 20px;
 	color: #fff;
@@ -72,7 +72,7 @@ html {
 
 .wrapper {
 	width: 90%;
-	max-width: 1000px;
+	max-width: 50rem;
 	margin: 1.5rem auto;
 	overflow: hidden;
 	position: relative;
@@ -111,25 +111,16 @@ input {
 }
 
 .text {
-	height: 0px;
+	height: 0rem;
 	opacity: 0;
-	transition: opacity 2s;
 	visibility: hidden;
-}
-
-#slide1:checked ~ .control > .discabe > #dsb1,
-#slide2:checked ~ .control > .discabe > #dsb2,
-#slide3:checked ~ .control > .discabe > #dsb3,
-#slide4:checked ~ .control > .discabe > #dsb4,
-#slide5:checked ~ .control > .discabe > #dsb5 {
-	visibility: visible;
-	height: auto;
-	opacity: 1;
+	transform: translateX(1rem);
+	
 }
 
 .buttons {
 	display: flex;
-	background-color: #2b2b2b;
+	background-color: #25282a;
 }
 
 .button {
@@ -142,16 +133,26 @@ input {
 
 .button > span {
 	display: block;
-	width: 0.6rem;
-	height: 0.6rem;
-	border: solid 2px #2d9cdb;
-	background-color: #2d9cdb;
+	width: 0.8rem;
+	height: 0.8rem;
+	border: solid 0.1rem #71abfe;
+	background-color: #71abfe;
 	border-radius: 50%;
 	transition: 0.2s;
 }
 
 .button:hover {
 	cursor: pointer;
+}
+
+.button:hover > span {
+	border: solid 0.1rem #fff;
+	background-color: #fff;
+}
+
+.button:active > span {
+	border: solid 0.1rem #fff;
+	background-color: #fff;
 }
 
 #slide1:checked ~ .slider {
@@ -174,12 +175,24 @@ input {
 	transform: translateX(calc(-20% * 4 - 4rem / 4));
 }
 
+#slide1:checked ~ .control > .discabe > #dsb1,
+#slide2:checked ~ .control > .discabe > #dsb2,
+#slide3:checked ~ .control > .discabe > #dsb3,
+#slide4:checked ~ .control > .discabe > #dsb4,
+#slide5:checked ~ .control > .discabe > #dsb5 {
+	visibility: visible;
+	height: auto;
+	opacity: 1;
+	transform: translateX(0);
+	transition: 0.5s;
+}
+
 #slide1:checked ~ .control > .buttons > #select1 > span,
 #slide2:checked ~ .control > .buttons > #select2 > span,
 #slide3:checked ~ .control > .buttons > #select3 > span,
 #slide4:checked ~ .control > .buttons > #select4 > span,
 #slide5:checked ~ .control > .buttons > #select5 > span {
-	border: solid 2px #2d9cdb;
+	border: solid 0.1rem #71abfe;
 	background-color: transparent;
 }
 
@@ -188,7 +201,7 @@ input {
 #slide3:checked ~ .control > .buttons > #select3:hover > span,
 #slide4:checked ~ .control > .buttons > #select4:hover > span,
 #slide5:checked ~ .control > .buttons > #select5:hover > span {
-	border: solid 2px #fff;
+	border: solid 0.1rem #fff;
 }
 
 #slide1:checked ~ .control > .buttons > #select1:active > span,
@@ -196,20 +209,10 @@ input {
 #slide3:checked ~ .control > .buttons > #select3:active > span,
 #slide4:checked ~ .control > .buttons > #select4:active > span,
 #slide5:checked ~ .control > .buttons > #select5:active > span {
-	border: solid 2px #ccc;
+	border: solid 0.1rem #fff;
 }
 
-.button:hover > span {
-	border: solid 2px #fff;
-	background-color: #fff;
-}
-
-.button:active > span {
-	border: solid 2px #ccc;
-	background-color: #ccc;
-}
-
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 38.35rem) {
 	.control {
 		display: flex;
 		justify-content: space-between;
