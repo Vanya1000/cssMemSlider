@@ -8,22 +8,11 @@
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
-:focus,
-:active {
-	outline: none;
-}
-a:focus,
-a:active {
-	outline: none;
-}
 html,
 input,
 button,
 textarea {
 	font-family: inherit;
-}
-input::-ms-clear {
-	display: none;
 }
 button {
 	cursor: pointer;
@@ -32,46 +21,26 @@ button::-moz-focus-inner {
 	padding: 0;
 	border: 0;
 }
-a,
-a:visited {
-	color: #fff;
-	text-decoration: none;
-}
-a:hover {
-	text-decoration: none;
-}
-ul li {
-	list-style-type: none;
-}
-img {
-	vertical-align: top;
-}
 
-h3,
-h4,
-h5,
-h6 {
-	font-size: inherit;
-	font-weight: inherit;
-}
 
 html {
 	background: #25282a;
 	font-family: "Helvetica", "Arial", sans-serif;
-	font-size: 20px;
+	font-size: 1.25rem;
 	color: #fff;
 }
 
 .wrapper {
 	width: 90%;
 	max-width: 50rem;
-	margin: 1.5rem auto;
+	margin: 0.8rem auto;
 	overflow: hidden;
-	position: relative;
 }
 
 input {
-	display: none;
+	visibility: hidden;
+   width: 0;
+   height: 0;
 }
 
 .slider {
@@ -106,8 +75,7 @@ input {
 	height: 0rem;
 	opacity: 0;
 	visibility: hidden;
-	transform: translateX(1rem);
-	
+	transform: translateX(2rem);
 }
 
 .buttons {
@@ -116,7 +84,7 @@ input {
 }
 
 .button {
-	width: 1.2rem;
+	width: 1.7rem;
 	height: 2rem;
 	display: flex;
 	align-items: center;
@@ -176,7 +144,8 @@ input {
 	height: auto;
 	opacity: 1;
 	transform: translateX(0);
-	transition: 0.5s;
+	transition: 1s;
+	animation: fadeIn;
 }
 
 #slide1:checked ~ .control > .buttons > #select1 > span,
@@ -204,7 +173,16 @@ input {
 	border: solid 0.1rem #fff;
 }
 
-@media screen and (max-width: 38.35rem) {
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@media screen and (max-width: 47.938rem) {
 	.control {
 		display: flex;
 		justify-content: space-between;
