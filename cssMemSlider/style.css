@@ -1,0 +1,205 @@
+* {
+	padding: 0;
+	margin: 0;
+	border: 0rem;
+}
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+html,
+input,
+button,
+textarea {
+	font-family: inherit;
+}
+button {
+	cursor: pointer;
+}
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+
+html {
+	background: #25282a;
+	font-family: "Helvetica", "Arial", sans-serif;
+	font-size: 1.25rem;
+	color: #fff;
+}
+
+.wrapper {
+	width: 90%;
+	max-width: 50rem;
+	margin: 0.8rem auto;
+	overflow: hidden;
+}
+
+input {
+	visibility: hidden;
+   width: 0;
+   height: 0;
+}
+
+.slider {
+	display: flex;
+	width: calc(500% + 4rem);
+	gap: 1rem;
+	transition: 0.5s;
+	margin-bottom: 1rem;
+}
+
+.slide {
+	width: calc((100% - 4rem) / 5);
+	scroll-snap-align: start;
+}
+
+.slide img {
+	width: 100%;
+	height: auto;
+}
+
+.control {
+	display: flex;
+	justify-content: space-between;
+	gap: 2%;
+}
+
+.discabe {
+	margin-top: 0.5rem;
+}
+
+.text {
+	height: 0rem;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateX(2rem);
+}
+
+.buttons {
+	display: flex;
+	background-color: #25282a;
+}
+
+.button {
+	width: 1.7rem;
+	height: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.button > span {
+	display: block;
+	width: 0.8rem;
+	height: 0.8rem;
+	border: solid 0.1rem #71abfe;
+	background-color: #71abfe;
+	border-radius: 50%;
+	transition: 0.2s;
+}
+
+.button:hover {
+	cursor: pointer;
+}
+
+.button:hover > span {
+	border: solid 0.1rem #fff;
+	background-color: #fff;
+}
+
+.button:active > span {
+	border: solid 0.1rem #fff;
+	background-color: #fff;
+}
+
+#slide1:checked ~ .slider {
+	transform: translateX(0);
+}
+
+#slide2:checked ~ .slider {
+	transform: translateX(calc(-20% * 1 - 1rem / 4));
+}
+
+#slide3:checked ~ .slider {
+	transform: translateX(calc(-20% * 2 - 2rem / 4));
+}
+
+#slide4:checked ~ .slider {
+	transform: translateX(calc(-20% * 3 - 3rem / 4));
+}
+
+#slide5:checked ~ .slider {
+	transform: translateX(calc(-20% * 4 - 4rem / 4));
+}
+
+#slide1:checked ~ .control > .discabe > #dsb1,
+#slide2:checked ~ .control > .discabe > #dsb2,
+#slide3:checked ~ .control > .discabe > #dsb3,
+#slide4:checked ~ .control > .discabe > #dsb4,
+#slide5:checked ~ .control > .discabe > #dsb5 {
+	visibility: visible;
+	height: auto;
+	opacity: 1;
+	transform: translateX(0);
+	transition: 1s;
+	animation: fadeIn;
+}
+
+#slide1:checked ~ .control > .buttons > #select1 > span,
+#slide2:checked ~ .control > .buttons > #select2 > span,
+#slide3:checked ~ .control > .buttons > #select3 > span,
+#slide4:checked ~ .control > .buttons > #select4 > span,
+#slide5:checked ~ .control > .buttons > #select5 > span {
+	border: solid 0.1rem #71abfe;
+	background-color: transparent;
+}
+
+#slide1:checked ~ .control > .buttons > #select1:hover > span,
+#slide2:checked ~ .control > .buttons > #select2:hover > span,
+#slide3:checked ~ .control > .buttons > #select3:hover > span,
+#slide4:checked ~ .control > .buttons > #select4:hover > span,
+#slide5:checked ~ .control > .buttons > #select5:hover > span {
+	border: solid 0.1rem #fff;
+}
+
+#slide1:checked ~ .control > .buttons > #select1:active > span,
+#slide2:checked ~ .control > .buttons > #select2:active > span,
+#slide3:checked ~ .control > .buttons > #select3:active > span,
+#slide4:checked ~ .control > .buttons > #select4:active > span,
+#slide5:checked ~ .control > .buttons > #select5:active > span {
+	border: solid 0.1rem #fff;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@media screen and (max-width: 47.938rem) {
+	.control {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	.text {
+		flex-basis: 100%;
+		font-size: 0.9rem;
+	}
+
+	.buttons {
+		flex-basis: 100%;
+		order: -1;
+		align-self: center;
+		margin-bottom: 0.1rem;
+		display: flex;
+		justify-content: center;
+	}
+}
